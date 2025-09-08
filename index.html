@@ -2,258 +2,99 @@
 <html lang="en">
 
 <head>
-   <meta charset="UTF-8">
-   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <title>Green Earth</title>
-   <link rel="preconnect" href="https://fonts.googleapis.com">
-   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Green Earth</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
 
-   <!-- Tailwind CSS CDN for quick setup -->
-   <script src="https://cdn.tailwindcss.com"></script>
-   <script>
-      tailwind.config = {
-         theme: {
-            extend: {
-               fontFamily: {
-                  poppins: ['Poppins', 'sans-serif'],
-               },
-               colors: {
-                  'green-primary': '#15803d',
-                  'green-secondary': '#2a8a3c',
-                  'green-dark': '#0c4a16',
-                  'green-light': '#dcfce7',
-                  'green-lightest': '#f0fdf4',
-                  'yellow-accent': '#ffc107',
-                  'yellow-accent-hover': '#e5b300',
-                  'gray-dark': '#2b3a50',
-                  'gray-medium': '#4b5563',
-                  'gray-light': '#666',
-               }
+    <!-- Tailwind CSS CDN for quick setup -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        poppins: ['Poppins', 'sans-serif'],
+                    },
+                    colors: {
+                        'green-primary': '#15803d',
+                        'green-secondary': '#2a8a3c',
+                        'green-dark': '#0c4a16',
+                        'green-light': '#dcfce7',
+                        'green-lightest': '#f0fdf4',
+                        'yellow-accent': '#ffc107',
+                        'yellow-accent-hover': '#e5b300',
+                        'gray-dark': '#2b3a50',
+                        'gray-medium': '#4b5563',
+                        'gray-light': '#666',
+                    }
+                }
             }
-         }
-      }
-   </script>
-   <style>
-      .banner-leaf-left::before,
-      .banner-leaf-right::after {
-         content: '';
-         position: absolute;
-         top: 0;
-         height: 100%;
-         width: 30%;
-         z-index: 0;
-         background-repeat: no-repeat;
-         background-size: contain;
-         background-position: center;
-      }
+        }
+    </script>
+    <style>
+        .banner-leaf-left::before,
+        .banner-leaf-right::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            height: 100%;
+            width: 30%;
+            z-index: 0;
+            background-repeat: no-repeat;
+            background-size: contain;
+            background-position: center;
+        }
 
-      .banner-leaf-left::before {
-         left: 0;
-         bottom: 0;
+        .banner-leaf-left::before {
+            left: 0;
+            margin-top: 70px;
+            background-image: url('assets/hero-leaf1.png');
+        }
 
-         margin-top: 67px;
+        .banner-leaf-right::after {
+            right: 0;
+            margin-top: 70px;
+            background-image: url('assets/hero-leaf2.png');
+        }
 
-         background-image: url('assets/hero-leaf1.png');
-      }
+        @media (max-width: 768px) {
 
-      .banner-leaf-right::after {
-         right: 0;
-         margin-top: 67px;
+            .banner-leaf-left::before,
+            .banner-leaf-right::after {
+                display: none;
+            }
+        }
 
-         background-image: url('assets/hero-leaf2.png');
-      }
+        /* Loading Spinner */
+        @keyframes spin {
+            0% {
+                transform: rotate(0deg);
+            }
 
-      @media (max-width: 768px) {
+            100% {
+                transform: rotate(360deg);
+            }
+        }
 
-         .banner-leaf-left::before,
-         .banner-leaf-right::after {
-            display: none;
-         }
-      }
+        .loading-spinner {
+            border-left-color: #38a169;
+            /* Tailwind's emerald-600 approx */
+            animation: spin 1s linear infinite;
+        }
 
-      /* Loading Spinner */
-      @keyframes spin {
-         0% {
-            transform: rotate(0deg);
-         }
-
-         100% {
-            transform: rotate(360deg);
-         }
-      }
-
-      .loading-spinner {
-         border-left-color: #38a169;
-         /* Tailwind's emerald-600 approx */
-         animation: spin 1s linear infinite;
-      }
-
-      /* Hide alt text for image (if it shows up) */
-      .about-image {
-         font-size: 0;
-         line-height: 0;
-         color: transparent;
-      }
-   </style>
+        /* Hide alt text for image (if it shows up) */
+        .about-image {
+            font-size: 0;
+            line-height: 0;
+            color: transparent;
+        }
+    </style>
 </head>
 
-<body class="font-poppins antialiased bg-green-lightest text-gray-800">
-
-   <header class="bg-green-primary text-white py-4 px-6 flex justify-between items-center flex-wrap">
-      <div class="logo">
-         <a href="#" class="text-white text-2xl font-semibold no-underline">🌱Green Earth</a>
-      </div>
-      <nav class="nav-links">
-         <ul class="flex gap-8 m-0 p-0 list-none max-md:flex-col max-md:items-center max-md:mt-2 max-md:gap-4">
-            <li><a href="#"
-                  class="text-white font-semibold hover:text-green-200 hover:underline transition-colors">About</a></li>
-            <li><a href="#"
-                  class="text-white font-semibold hover:text-green-200 hover:underline transition-colors">Gallery</a>
-            </li>
-            <li><a href="#"
-                  class="text-white font-semibold hover:text-green-200 hover:underline transition-colors">Plant a
-                  Tree</a></li>
-         </ul>
-      </nav>
-
-      <div class="max-md:mt-2">
-         <a href="#"
-            class="bg-yellow-accent text-green-dark py-2 px-6 rounded-full font-semibold no-underline hover:bg-yellow-500 transition-colors">Plant
-            a Tree</a>
-      </div>
-   </header>
-   <section
-      class="banner bg-green-200 text-center py-20 px-4 relative overflow-hidden flex justify-center items-center min-h-[200px] banner-leaf-left banner-leaf-right h-[400px]">
-      <div class="relative z-10 max-w-xl mx-auto">
-         <h1 class="text-5xl font-bold m-0 text-gray-dark max-sm:text-3xl">Plant a Tree, Grow a Future</h1>
-         <p class="text-gray-medium text-lg mb-8 mt-4 max-sm:text-base">Join our mission to plant 1 million trees and
-            make the Earth greener for future generations.</p>
-         <button
-            class="bg-yellow-accent text-green-dark py-3 px-8 rounded-full border-none font-semibold cursor-pointer hover:bg-yellow-500 transition-colors max-sm:text-sm max-sm:px-6">Get
-            Involved</button>
-      </div>
-   </section>
-   <main class="container mx-auto px-6 py-8 bg-green-50">
-      <h2 class="text-center text-black text-4xl font-semibold mb-8 max-sm:text-3xl">Choose Your Trees</h2>
-      <div class="flex gap-8 items-start flex-wrap lg:flex-nowrap">
-         <aside class="w-full lg:w-[200px]  p-3 rounded-lg  max-md:mb-8 ">
-            <h3 class="text-black text-xl font-semibold mb-4">Categories</h3>
-            <ul id="categories-list" class="list-none p-0 m-0">
-               <li class="p-3 rounded-md cursor-pointer mb-2 transition-colors font-normal hover:bg-green-100 active:bg-green-primary active:font-semibold active:text-white"
-                  data-id="all">All Trees</li>
-            </ul>
-         </aside>
-
-         <section class="flex-1 relative">
-            <div id="loading-spinner"
-               class="loading-spinner hidden border-4 border-gray-200 border-l-emerald-600 rounded-full w-10 h-10 animate-spin mx-auto my-8">
-            </div>
-            <div id="plants-container" class="w-[100%%]  grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3 ">
-            </div>
-         </section>
-
-         <aside class="w-full lg:w-[20%] bg-white h-auto p-3 rounded-lg shadow-md">
-            <h3 class="text-left text-gray-dark text-2xl font-semibold mb-6">Your Cart</h3>
-            <ul id="cart-list" class="list-none p-0">
-               <!-- Cart items will be injected here -->
-            </ul>
-            <div
-               class="flex justify-between items-baseline text-black font-semibold text-xl pt-4 mt-8 border-t border-dashed border-gray-300">
-               <span>Total:</span>৳<span id="total-price" class="font-bold text-black">0</span>
-            </div>
-         </aside>
-      </div>
-   </main>
-   <section>
-      <h2
-         class="text-left text-gray-dark text-3xl font-semibold text-center mt-[5%] mb-[0%] max-sm:text-2xl max-md:text-center">
-         About
-         the Campaign</h2>
-   </section>
-   <section class="flex flex-wrap items-center justify-center gap-12 mb-[100px]  mt-8 bg-green-lightest ">
-
-      <img src="assets/about.png" alt="About Green Earth"
-         class="max-w-xs md:max-w-md h-auto rounded-lg shadow-xl order-1 about-image max-md:max-w-[250px] max-md:mb-6">
-      <div class="max-w-md order-2 text-left max-md:text-center">
-
-         <p class="text-gray-medium leading-relaxed mb-4 text-lg max-sm:text-base">Green Earth is a global tree
-            plantation initiative dedicated to fighting climate change. Since our start, we've planted over 500,000
-            trees worldwide. By joining our campaign, you help restore forests, create habitats for wildlife, and
-            combat global warming.</p>
-         <ul class="list-none p-0 mt-4 max-md:text-left max-md:mx-auto max-md:max-w-xs">
-            <li
-               class="mb-2 text-gray-medium relative pl-5 max-sm:text-base before:content-['•'] before:absolute before:left-0 before:text-green-primary before:font-bold before:text-lg">
-               Restoration of natural habitats</li>
-            <li
-               class="mb-2 text-gray-medium relative pl-5 max-sm:text-base before:content-['•'] before:absolute before:left-0 before:text-green-primary before:font-bold before:text-lg">
-               Improvement of air quality</li>
-            <li
-               class="mb-2 text-gray-medium relative pl-5 max-sm:text-base before:content-['•'] before:absolute before:left-0 before:text-green-primary before:font-bold before:text-lg">
-               Support for local communities</li>
-         </ul>
-      </div>
-   </section>
-
-   <section class="bg-green-200 py-16 px-6 text-center shadow-md">
-      <h2 class="text-black text-4xl font-semibold mb-8 max-sm:text-3xl">Our Impact</h2>
-      <div class="flex justify-center gap-2 mt-8 flex-wrap ">
-         <div
-            class="flex-1 min-w-[400px] p-6 rounded-lg bg-white max-w-[calc(33%-1rem)] max-md:max-w-full max-sm:min-w-auto hover:bg-green-lightest hover:text-2xl">
-            <h4 class="text-5xl font-bold text-green-primary m-0 max-sm:text-xl">500K+</h4>
-            <p class="m-0 text-gray-medium">Trees Planted</p>
-         </div>
-         <div
-            class="flex-1 min-w-[400px] p-6 rounded-lg bg-white max-w-[calc(33%-1rem)] max-md:max-w-full max-sm:min-w-auto hover:bg-green-lightest hover:text-2xl">
-            <h4 class="text-5xl font-bold text-green-primary m-0 max-sm:text-xl">120+</h4>
-            <p class="m-0 text-gray-medium">Communities Involved</p>
-         </div>
-         <div
-            class="flex-1 min-w-[400px] p-6 rounded-lg bg-white max-w-[calc(33%-1rem)] max-md:max-w-full max-sm:min-w-auto hover:bg-green-lightest hover:text-2xl">
-            <h4 class="text-5xl font-bold text-green-primary m-0 max-sm:text-xl">30+</h4>
-            <p class="m-0 text-gray-medium">Countries Reached</p>
-         </div>
-      </div>
-   </section>
-   <section class=" bg-green-primary text-white py-16 px-6 text-center">
-      <h2 class="text-white text-4xl font-semibold mb-8 max-sm:text-3xl">Plant a Tree Today</h2>
-      <form class="max-w-md mx-auto flex flex-col gap-4  p-10 rounded-lg bg-green-secondary">
-         <input type="text" placeholder="Your Name" required
-            class="p-3 rounded-md border-none bg-green-lightest text-gray-800 text-base placeholder-gray-600 focus:outline-none focus:ring-2 focus:ring-yellow-accent">
-         <input type="email" placeholder="Your Email Address" required
-            class="p-3 rounded-md border-none bg-green-lightest text-gray-800 text-base placeholder-gray-600 focus:outline-none focus:ring-2 focus:ring-yellow-accent">
-         <select id="number-of-trees" required
-            class="p-3 rounded-md border-none bg-green-lightest text-gray-800 text-base focus:outline-none focus:ring-2 focus:ring-yellow-accent">
-            <option value="" disabled selected class="text-gray-600">Number of Trees</option>
-            <option value="1">1 Tree</option>
-            <option value="5">5 Trees</option>
-            <option value="10">10 Trees</option>
-            <option value="20">20 Trees</option>
-            <option value="50">50 Trees</option>
-         </select>
-         <button type="submit"
-            class="bg-yellow-accent text-green-800 py-3 rounded-full border-none font-semibold cursor-pointer hover:bg-yellow-accent-hover transition-colors">Donate
-            Now</button>
-      </form>
-   </section>
-   <footer class="bg-green-dark text-white text-center py-4 text-sm">
-      <p>&copy; 2025 Green Earth. All Rights Reserved.</p>
-   </footer>
-
-   <div id="plant-modal"
-      class="hidden fixed inset-0 z-[100] overflow-auto bg-black bg-opacity-40 flex items-center justify-center">
-      <div class="bg-white p-6 rounded-lg w-11/12 max-w-xl shadow-lg relative">
-         <span
-            class="close-btn text-gray-500 absolute top-2 right-4 text-3xl font-bold cursor-pointer hover:text-black">&times;</span>
-         <div id="modal-body" class="mt-4">
-            <!-- Modal content will be injected here -->
-         </div>
-      </div>
-   </div>
-
-
-
-
+<body>
 
 </body>
 
