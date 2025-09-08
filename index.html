@@ -123,6 +123,48 @@
             a Tree</a>
       </div>
    </header>
+   <section
+      class="banner bg-green-200 text-center py-20 px-4 relative overflow-hidden flex justify-center items-center min-h-[200px] banner-leaf-left banner-leaf-right h-[400px]">
+      <div class="relative z-10 max-w-xl mx-auto">
+         <h1 class="text-5xl font-bold m-0 text-gray-dark max-sm:text-3xl">Plant a Tree, Grow a Future</h1>
+         <p class="text-gray-medium text-lg mb-8 mt-4 max-sm:text-base">Join our mission to plant 1 million trees and
+            make the Earth greener for future generations.</p>
+         <button
+            class="bg-yellow-accent text-green-dark py-3 px-8 rounded-full border-none font-semibold cursor-pointer hover:bg-yellow-500 transition-colors max-sm:text-sm max-sm:px-6">Get
+            Involved</button>
+      </div>
+   </section>
+   <main class="container mx-auto px-6 py-8 bg-green-50">
+      <h2 class="text-center text-black text-4xl font-semibold mb-8 max-sm:text-3xl">Choose Your Trees</h2>
+      <div class="flex gap-8 items-start flex-wrap lg:flex-nowrap">
+         <aside class="w-full lg:w-[200px]  p-3 rounded-lg  max-md:mb-8 ">
+            <h3 class="text-black text-xl font-semibold mb-4">Categories</h3>
+            <ul id="categories-list" class="list-none p-0 m-0">
+               <li class="p-3 rounded-md cursor-pointer mb-2 transition-colors font-normal hover:bg-green-100 active:bg-green-primary active:font-semibold active:text-white"
+                  data-id="all">All Trees</li>
+            </ul>
+         </aside>
+
+         <section class="flex-1 relative">
+            <div id="loading-spinner"
+               class="loading-spinner hidden border-4 border-gray-200 border-l-emerald-600 rounded-full w-10 h-10 animate-spin mx-auto my-8">
+            </div>
+            <div id="plants-container" class="w-[100%%]  grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3 ">
+            </div>
+         </section>
+
+         <aside class="w-full lg:w-[20%] bg-white h-auto p-3 rounded-lg shadow-md">
+            <h3 class="text-left text-gray-dark text-2xl font-semibold mb-6">Your Cart</h3>
+            <ul id="cart-list" class="list-none p-0">
+               <!-- Cart items will be injected here -->
+            </ul>
+            <div
+               class="flex justify-between items-baseline text-black font-semibold text-xl pt-4 mt-8 border-t border-dashed border-gray-300">
+               <span>Total:</span>৳<span id="total-price" class="font-bold text-black">0</span>
+            </div>
+         </aside>
+      </div>
+   </main>
 
 
 </body>
